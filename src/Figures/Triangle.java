@@ -2,17 +2,24 @@ package Figures;
 
 import AbstractClass.Figure;
 import Error.ErrorSide;
-public class Triangle extends Figure {
-    private double hide = 0;
-    private double sideA = 0;
-    private double sideB = 0;
-    private double sideC = 0;
+import Interface.IPerimeter;
+
+public class Triangle extends Figure implements IPerimeter {
+    private double hide;
+    private double sideA;
+    private double sideB;
+    private double sideC;
 
     public Triangle(double hide, double sideA, double sideB, double sideC) {
         this.hide = hide;
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
+
+        isTrue(hide, sideA, sideB, sideC);
+    }
+
+    private void isTrue(double hide, double sideA, double sideB, double sideC) {
 
         if (hide <= 0 || sideA <= 0 || sideB <= 0 || sideC <= 0) {
             throw new ErrorSide("Длина стороны не может быть отрицательная или равна нулю");
@@ -25,7 +32,7 @@ public class Triangle extends Figure {
                     throw new ErrorSide("Сумма длин двух сторон должна быть больше длины третьей стороны");
                 }
             } else {
-               double ex = sideA + sideB;
+                double ex = sideA + sideB;
                 if (sideC >= ex) {
                     throw new ErrorSide("Сумма длин двух сторон должна быть больше длины третьей стороны");
                 }
@@ -42,17 +49,16 @@ public class Triangle extends Figure {
                 throw new ErrorSide("Сумма длин двух сторон должна быть больше длины третьей стороны");
             }
         }
-
     }
 
     @Override
-    public void perimeter() {
-        double p = sideA + sideB + sideC;
+    public double perimeter() {
+        return sideA + sideB + sideC;
     }
 
     @Override
-    public void area() {
-        double ar = 0.5 * sideA * hide;
+    public double area() {
+        return 0.5 * sideA * hide;
     }
 
 }

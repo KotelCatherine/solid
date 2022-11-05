@@ -1,25 +1,20 @@
 package Figures;
 
-import AbstractClass.Figure;
-import Error.ErrorSide;
-public class Square extends Figure {
-    private int sideA = 0;
+import Interface.IPerimeter;
 
-    public Square(int sideA) {
-        this.sideA = sideA;
+public class Square extends Quadrangle implements IPerimeter {
 
-        if (sideA <= 0) {
-            throw new ErrorSide("Длина стороны не может быть отрицательная или равна нулю");
-        }
+    public Square(int sideA, int sideB, int sideC, int sideD) {
+        super(sideA, sideB, sideC, sideD);
     }
 
     @Override
-    public void perimeter() {
-        int p = 4 * sideA;
+    public double perimeter() {
+        return super.perimeter();
     }
 
     @Override
-    public void area() {
-        int ar = sideA * sideA;
+    public double area() {
+        return super.area();
     }
 }

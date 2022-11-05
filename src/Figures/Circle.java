@@ -2,8 +2,10 @@ package Figures;
 
 import AbstractClass.Figure;
 import Error.ErrorSide;
-public class Circle extends Figure {
-    private double radius = 0;
+import Interface.ICircumference;
+
+public class Circle extends Figure implements ICircumference {
+    private double radius;
     private final double pi = 3.14;
 
     public Circle(double radius) {
@@ -14,12 +16,12 @@ public class Circle extends Figure {
     }
 
     @Override
-    public void perimeter() {
-        double p = 2.0 * pi * radius;
+    public double circumference() {
+        return 2.0 * pi * radius;
     }
 
     @Override
-    public void area() {
-        double ar = pi * radius * radius;
+    public double area() {
+        return pi * radius * radius;
     }
 }
