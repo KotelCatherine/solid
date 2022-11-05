@@ -20,7 +20,6 @@ public class Triangle extends Figure implements IPerimeter {
     }
 
     private void isTrue(double hide, double sideA, double sideB, double sideC) {
-
         if (hide <= 0 || sideA <= 0 || sideB <= 0 || sideC <= 0) {
             throw new ErrorSide("Длина стороны не может быть отрицательная или равна нулю");
         }

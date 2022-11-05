@@ -15,7 +15,6 @@ public class Circle extends Figure implements ICircumference {
         }
     }
 
-
     @Override
     public double circumference() {
         return 2.0 * pi * radius;

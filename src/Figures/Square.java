@@ -3,7 +3,6 @@ package Figures;
 import Interface.IPerimeter;
 
 public class Square extends Quadrangle implements IPerimeter {
-
     public Square(int sideA, int sideB, int sideC, int sideD) {
         super(sideA, sideB, sideC, sideD);
     }

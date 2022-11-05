@@ -5,7 +5,6 @@ import Interface.IPerimeter;
 import Error.ErrorSide;
 
 public class Quadrangle extends Figure implements IPerimeter {
-
     private double sideA;
     private double sideB;
     private double sideC;
