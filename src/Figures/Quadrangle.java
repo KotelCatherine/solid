@@ -29,7 +29,6 @@ public class Quadrangle extends Figure implements IPerimeter {
     @Override
     public double perimeter() {
         return sideA + sideB + sideC + sideD;
-
     }
 
     @Override
